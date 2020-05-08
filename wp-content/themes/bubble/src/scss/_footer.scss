@@ -1,0 +1,51 @@
+footer {
+	background: $black;
+	padding: 60px 0px;
+	padding-bottom: 20px;
+	color:white;
+	@include maxw(table_max) {
+    	padding: 30px 0px;
+		padding-bottom: 20px;
+    }
+	.flex {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		.flex-item {
+			flex: none;
+			width: calc(33.33% - 10px);
+			li {
+				margin-bottom: 10px;
+				a {
+					color: white !important;
+				}
+			}
+			ul {
+				&.social-dy {
+					display: flex;
+    				margin-top: 10px;
+    				li {
+    					margin-right: 10px;
+    				}
+					img {
+						filter: invert(1);
+					    width: 20px;
+					    height: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.xtrafooter {
+    text-align: center;
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 5px 0px;
+    a {
+    	color: white;
+    	text-decoration: underline;
+	}
+}

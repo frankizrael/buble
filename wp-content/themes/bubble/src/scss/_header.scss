@@ -1,0 +1,121 @@
+@import "utilities";
+header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 10;
+	transition: 0.3s;
+    padding: 10px 0px;
+	.flex {
+		display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+		.left {
+			a {
+			    width: 200px;
+			    overflow: hidden;
+			    flex: none;
+			    display: flex;
+			    height: 90px;
+			    align-items: center;
+			    /*background: white;
+			    padding: 10px;
+			    box-sizing: border-box;*/
+			    @include maxw(table_max) {
+			    	width: 120px;
+			    }
+				img {
+				    width: 100%;
+				    height: auto;
+				}
+			}
+		}
+		.right {
+			.menu-icon {
+				display: block !important;
+				width: 60px;
+			    height: 60px;
+			    flex: none;
+			    padding: 0px;
+			    cursor: pointer;
+			    position: relative;
+			    background: $lightgreen;
+				i {
+					position: absolute;
+					width: 30px;
+				    height: 3px;
+				    background: white;
+				    right: 10px;
+				    top: 50%;
+					transform: translateY(-50%);
+					transition: 0.3s;
+					&:before, &:after {
+						content: '';
+						position: absolute;
+						width: 40px;
+					    height: 100%;
+					    background: white;
+					    right: 0px;
+						transition: 0.3s;
+					}
+					&:before { top: -13px; }
+					&:after { bottom: -13px; }
+				}
+			}
+		}
+	}
+	&.active {
+	    background: white;
+	    box-shadow: 0px 8px 12px #3837375c;
+	}
+}
+.menufixed {
+	position: fixed;
+    top: 110px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 110px);
+    background: white;
+    z-index: 40;
+    margin-right: 0px;	
+    transition: 0.3s;		    
+    opacity: 0;
+    pointer-events: none;
+    .fullh {
+	    height: 100%;
+	    display: flex;
+	    align-items: center;
+	    position: relative;
+	    .absFoot {
+		    position: absolute;
+		    display: flex;
+		    width: 100%;
+		    justify-content: space-between;
+		    bottom: 50px;
+		}
+	}
+	.middle-menu {
+	    margin-top: -100px;
+	    a {
+		    display: block;
+		    font-size: 50px;
+		    margin: 20px 0px;
+		    font-family: 'gilroybold';
+		    -webkit-text-stroke: 1px $black;
+		    color: transparent;
+		}
+	}
+}
+.menuOpen {
+	overflow: hidden;
+	header {
+		box-shadow: none !important;
+    	background: white;	
+	}
+	.menufixed {
+		opacity: 1;
+		pointer-events: all;
+    	background: white;	
+	}
+}

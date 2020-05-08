@@ -1,0 +1,15 @@
+.title {
+	position: relative;
+	max-width: 800px;	
+	h2,h3,h4 {
+		font-family: 'gilroysemibold';
+		font-size: 40px;
+		line-height: 50px;
+		color: $black;
+		@include maxw(tablet_p) {
+			font-size: 30px;
+			line-height: 30px;
+		}
+	}	
+}
+
