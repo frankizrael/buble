@@ -40,6 +40,14 @@ input {outline:none;}
 		display: block;
 	}
 }
+#burbuja {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    left: 0;
+    pointer-events: none;
+}
 .x-container {
 	margin: auto;
 	max-width: calc(100% - 600px);

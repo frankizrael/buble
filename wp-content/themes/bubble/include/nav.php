@@ -6,7 +6,8 @@ $fid = get_option( 'page_on_front' );
 		<div class="flex flex-center">
 			<div class="left">
 				<a href="<?php echo site_url();?>">
-					<img src="<?php the_field('logo','options'); ?>">
+					<img src="<?php the_field('logo','options'); ?>" class="colors">
+					<img src="<?php echo get_template_directory_uri(); ?>/logo.png" class="white">
 				</a>
 			</div>
 			<div class="right">
@@ -45,3 +46,8 @@ $fid = get_option( 'page_on_front' );
 		</div>
 	</div>
 </nav>
+
+
+<div id="burbuja" class="burbujitas">
+   <canvas id="canvas"></canvas>
+</div>
