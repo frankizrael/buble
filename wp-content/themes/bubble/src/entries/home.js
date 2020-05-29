@@ -53,3 +53,23 @@ var mySwiperInit = new Swiper('.testimonios', {
     },
     slidesPerView: 'auto'
 });
+
+$('.true_fragancias a').on('click',function(e){
+    e.preventDefault();
+    let $this = $(this);
+    let id = $this.attr('href');
+    let data = $this.attr('data');
+    $('.d_banner--about').addClass('left');
+    $('.fragancias_hide').removeClass('show');
+    $(id).addClass('show');
+    $('.ress').removeClass('show');
+    $(data).addClass('show');
+    $('.ress_init').removeClass('ress_fb');
+});
+$('.back').on('click',function(e){
+    e.preventDefault();
+    $('.d_banner--about').removeClass('left');
+    $('.fragancias_hide').removeClass('show');
+    $('.ress').removeClass('show');
+    $('.ress_init').addClass('ress_fb');
+});

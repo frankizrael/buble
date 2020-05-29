@@ -3,6 +3,121 @@ set_query_var('ENTRY', 'home');
 get_header();
 ?>
 <?php get_template_part('include/nav'); ?>
+<section class="fullheight d_banner">
+	<article class="d_banner__article d_banner--about" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+		<div class="x-container posRelative">
+			<div class="d_banner__article__left">
+				<h1><?php the_title(); ?></h1>
+				<div class="content">
+					<?php the_field('content_inicial'); ?>
+				</div>
+				<div class="true_fragancias">
+					<ul>
+						<?php 
+							$fragancias = get_field('fragancias');
+							foreach ($fragancias as $fr) {
+								?>
+						<li>
+							<a href="#<?php echo $fr['id']; ?>" data="#img_<?php echo $fr['id']; ?>" style="background:<?php echo $fr['color']; ?>">
+								<?php echo $fr['title']; ?>
+							</a>
+						</li>
+								<?php
+							}
+						?>
+					</ul>
+				</div>
+
+				<div class="social_r">
+					<p>Síguenos:</p>
+					<ul class="social-a">
+						<?php
+							$social = get_field('social','options');
+							foreach ($social as $s) {
+								?>
+						<li>
+							<a href="<?php echo $s['link']; ?>" target="_blank">
+								<img src="<?php echo $s['img']; ?>">
+							</a>
+						</li>
+								<?php
+							}
+						?>
+					</ul>
+				</div>
+			</div>	
+			<div class="d_banner__article__right">
+				<img src="<?php the_field('imagen_rosa'); ?>" style="display: none;">
+			</div>
+		</div>
+	</article>
+	<article class="d_banner__article d_banner__insides">
+		<div class="fragancias_inside">
+			<?php 
+				$fragancias = get_field('fragancias');
+				foreach ($fragancias as $fr) {
+					?>
+					<div class="fragancias_hide" id="<?php echo $fr['id']; ?>">
+						<div class="x-container posRelative">
+							<div class="d_banner__flex">
+								<div class="d_banner__article__left">
+									<div class="height__left ">
+										<div class="decorative1" style="background:<?php echo $fr['color']; ?>"></div>
+										<div class="midd_left">
+											<a href="javascript:void(0)" class="back">Volver</a>
+											<h2><i style="background:<?php echo $fr['color']; ?>"></i><?php echo $fr['title']; ?></h2>
+											<div class="content">
+												<?php echo $fr['content']; ?>
+											</div>
+											<div class="social_r">
+												<p>Síguenos:</p>
+												<ul class="social-dy">
+													<?php
+														$social = get_field('social','options');
+														foreach ($social as $s) {
+															?>
+													<li>
+														<a href="<?php echo $s['link']; ?>" target="_blank">
+															<img src="<?php echo $s['img']; ?>">
+														</a>
+													</li>
+															<?php
+														}
+													?>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>	
+								<div class="d_banner__article__right">
+									<img src="<?php echo $fr['img']; ?>" style="display: none;">
+									<div class="decorative_image">
+										<div class="decorative_image__1" style="background:<?php echo $fr['color']; ?>"></div>
+										<div class="decorative_image__2" style="background:<?php echo $fr['color']; ?>"></div>
+										<div class="decorative_image__3" style="background:<?php echo $fr['color']; ?>"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="decorative2" style="background:<?php echo $fr['color']; ?>"></div>
+					</div>
+					<?php
+				}
+			?>
+		</div>
+	</article>
+	<div class="imagen_absolute">
+		<img src="<?php the_field('imagen_rosa'); ?>" class="ress ress_fb ress_init">
+		<?php 
+			$fragancias = get_field('fragancias');
+			foreach ($fragancias as $fr) {
+				?>
+				<img src="<?php echo $fr['img']; ?>" id="img_<?php echo $fr['id']; ?>" class="ress">
+				<?php
+			}
+		?>
+	</div>
+</section>
 <section id="<?php echo sanitize_title(get_field('init_mid_title')); ?>" class="init fullheight">
 	<div class="full-container fullheight">
 		<div class="flex fullheight">

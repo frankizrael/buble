@@ -1,2 +1,251 @@
 @import "utilities";
 @import "variables";
+.init {
+	.flex {
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		display: flex;
+		.flex-50 {
+			width: 50%;
+			flex: none;
+			background-size: cover;
+		}
+		.flex-middle {
+		    background: $lightgreen;
+		    display: flex;
+		    align-items: center;
+		    height: 100%;
+		    .flex-content {		    	
+				padding-right: 60px;
+		    }
+		}
+	}
+	.content-ss {
+		position: relative;
+		padding-left: 50px;
+	    .content_detail {
+		    margin-top: 30px;
+		    margin-bottom: 15px;
+	    	p {
+	    		font-size: 30px;
+	    		font-family: 'gilroysemibold';
+	    		color: $black;
+	    		font-weight: 700;
+	    	}
+	    }
+	}
+	.title_content {
+		h1 {
+		    -webkit-text-stroke: 2px white;
+		    color: transparent;
+		    font-size: 88px;
+		}
+	}
+	.content_detail {
+		p {
+
+		}
+	}
+	.initCore {
+	    background-size: cover;
+	    background-position: center;
+	    position: relative;
+	    z-index: 1;
+	    &:before {
+	    	content: '';
+	    	position: absolute;
+	    	width: 100%;
+	    	height: 100%;
+	    	background: $black;
+	    	top: 0px;
+	    	left: 0px;
+	    	opacity: 0.75;
+	    	z-index: -1;
+	    }
+	}
+	.x-coretitle {
+	    position: absolute;
+	    z-index: 5;
+	    color: white;
+	    right: 300px;
+	    bottom: 50px;
+	    @include maxw(mylaptop) {
+			right: 100px;
+		}
+		@include maxw(laptop) {
+			right: 100px;
+		}
+		@include maxw(tablet_p) {
+			right: 50px;
+		}
+		@include maxw(table_max) {
+			right: 20px;
+		}
+		@include maxw(table_min) {
+			right: 20px;
+		}
+		@include maxw(mobile) {
+			right: 20px;
+		}
+		.titleContent {
+		    color: white;
+		    text-align: right;
+		    h3 {
+			    font-size: 50px;
+			    margin-bottom: 10px;
+			}
+			p {
+			    font-size: 20px;
+			    font-weight: 700;
+			    line-height: 25px;
+			}
+			a {
+			    border: solid 1px white;
+			    display: inline-block;
+			    margin-top: 50px;
+			    color: white;
+			    padding: 20px;
+			    border-radius: 5px;
+			    min-width: 200px;
+			    text-align: center;
+			}
+		}
+	}
+	.swiper-pagination {
+		position: absolute !important;
+	    transform: rotate(90deg);
+	    top: 50%;
+	    right: 300px;
+	    bottom: auto !important;
+	    left: auto !important;
+	    margin: 0px;
+	    width: auto !important;
+	    @include maxw(mylaptop) {
+			right: 100px;
+		}
+		@include maxw(laptop) {
+			right: 100px;
+		}
+		@include maxw(tablet_p) {
+			right: 50px;
+		}
+		@include maxw(table_max) {
+			right: 20px;
+		}
+		@include maxw(table_min) {
+			right: 20px;
+		}
+		@include maxw(mobile) {
+			right: 20px;
+		}
+	}
+	.animation--s {
+	    position: absolute;
+	    height: 120px;
+	    width: 20px;
+	    left: 0px;
+	    bottom: -50px;
+	    overflow: hidden;
+	    &:before {
+	    	content: '';
+		    position: absolute;
+		    width: 3px;
+		    background: $black;
+		    height: 100%;
+		    left: 8.5px;
+	    }
+	    svg {
+	    	position: absolute;
+	    	animation: animationSvg linear 2s;
+			animation-iteration-count: infinite;
+			transform-origin: 50% 50%;
+	    	path {
+	    		stroke: $black;
+	    		fill: $lightgreen;
+	    	}
+	    }
+	}
+}
+
+@keyframes animationSvg{
+  0% {
+    transform:  translateY(-25px);
+  }
+  100% {
+    transform:  translateY(150px);
+  }
+}
+
+.sectionFull {
+	article {
+		.flex {
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			display: flex;
+			.left, .right {
+				width: 50%;
+				flex: none;
+				background-size: cover;
+			}
+			.flex_mid {
+			    display: flex;
+			    align-items: center;
+			}
+		}
+		.swiper-pagination {
+			position: absolute !important;
+		    transform: rotate(90deg);
+		    top: 50%;
+		    right: 300px;
+		    bottom: auto !important;
+		    left: auto !important;
+		    margin: 0px;
+		    width: auto !important;
+		    @include maxw(mylaptop) {
+				right: 100px;
+			}
+			@include maxw(laptop) {
+				right: 100px;
+			}
+			@include maxw(tablet_p) {
+				right: 50px;
+			}
+			@include maxw(table_max) {
+				right: 20px;
+			}
+			@include maxw(table_min) {
+				right: 20px;
+			}
+			@include maxw(mobile) {
+				right: 20px;
+			}
+		}
+		.title_aa {
+		    position: absolute;
+		    font-size: 25px;
+		    bottom: 50px;
+		    left: 30px;
+		    font-weight: 700;
+		}
+		.title_rotate h2 {
+		    font-size: 140px;
+		    -webkit-text-stroke: 2px white;
+		    color: transparent;
+		}
+		.title_sec li {
+		    font-size: 28px;
+		    margin-bottom: 15px;
+		    font-family: 'gilroysemibold';
+			color: #27233b;
+		}
+		.cc_rr_content_img_item {
+		    background-size: contain;
+		    background-repeat: no-repeat;
+		    background-color: #fefefe;
+		    background-position: center;
+		    position: relative;
+		}
+	}
+}

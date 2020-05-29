@@ -14,3 +14,18 @@ $('.self_form__init .form__close').on('click',function(){
 	let $this = $(this);
 	$this.closest('.self_form__init').find('.self_form__init__back').removeClass('active');
 });
+
+
+
+var mySwiperInit = new Swiper('.cc_rr_content_img', {
+    speed: 400,
+    loop: true,
+    pagination: {
+        el: '.cc_rr_content_img .swiper-pagination',
+        clickable: true
+    },
+    slidesPerView: 1,
+    autoplay: {
+        delay: 7500
+    }
+});
