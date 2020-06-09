@@ -3,7 +3,169 @@ set_query_var('ENTRY', 'home');
 get_header();
 ?>
 <?php get_template_part('include/nav'); ?>
-<section class="fullheight d_banner">
+<section class="section fullheight bubble-presentaciones">
+	<div class="full-container fullheight">
+		<div class="flex">
+			<div class="title-abs">
+				<h3><?php the_field('fourth_subtitle'); ?></h3>
+			</div>
+			<div class="left fullheight" style="background-image: url(<?php the_field('foruth_left_image'); ?>);">				
+				<div class="decret">
+					<div class="top-part">
+						<?php the_field('foruth_left_content'); ?>
+					</div>
+					<div class="bottom-part">
+						<a href="#jabon" class="btn">Ver más</a>
+					</div>
+				</div>
+				<?php
+					if(!wp_is_mobile()){
+						?>
+				<video autoplay muted loop id="myVideo">
+				  <source src="<?php the_field('video_jabones'); ?>" type="video/mp4">
+				</video>
+						<?php
+					}
+				?>
+			</div>
+			<div class="right fullheight" style="background-image: url(<?php the_field('foruth_right_image'); ?>);">
+				<div class="decret">
+					<div class="top-part">
+						<?php the_field('foruth_right_content'); ?>
+					</div>
+					<div class="bottom-part">
+						<a href="<?php the_field('fourth_title'); ?>" class="btn">Ver más</a>
+					</div>
+				</div>
+				<?php
+					if(!wp_is_mobile()){
+						?>
+				<video autoplay muted loop id="myVideo2">
+				  <source src="<?php the_field('video_gel'); ?>" type="video/mp4">
+				</video>
+						<?php
+					}
+				?>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="<?php echo sanitize_title(get_field('fourth_title')); ?>" data="<?php the_field('fourth_title'); ?>" class="fullheight d_banner d_bannerjs_gel">
+	<article class="d_banner__article d_banner--about" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+		<div class="x-container posRelative">
+			<div class="d_banner__article__left">
+				<h1><?php the_field('gel_title'); ?></h1>
+				<div class="content">
+					<?php the_field('gel_inicial'); ?>
+				</div>
+				<div class="true_fragancias">
+					<ul>
+						<?php 
+							$fragancias = get_field('gel_fragancias');
+							foreach ($fragancias as $fr) {
+								?>
+						<li>
+							<a href="#get_<?php echo $fr['id']; ?>" data="#get_img_<?php echo $fr['id']; ?>" style="background:<?php echo $fr['color']; ?>">
+								<?php echo $fr['title']; ?>
+							</a>
+						</li>
+								<?php
+							}
+						?>
+					</ul>
+				</div>
+
+				<div class="social_r">
+					<p>Síguenos:</p>
+					<ul class="social-a">
+						<?php
+							$social = get_field('social','options');
+							foreach ($social as $s) {
+								?>
+						<li>
+							<a href="<?php echo $s['link']; ?>" target="_blank">
+								<img src="<?php echo $s['img']; ?>">
+							</a>
+						</li>
+								<?php
+							}
+						?>
+					</ul>
+				</div>
+			</div>	
+			<div class="d_banner__article__right">
+				<img src="<?php the_field('gel_imagen_basic'); ?>" style="display: none;">
+			</div>
+		</div>
+	</article>
+	<article class="d_banner__article d_banner__insides">
+		<div class="fragancias_inside">
+			<?php 
+				$fragancias = get_field('gel_fragancias');
+				foreach ($fragancias as $fr) {
+					?>
+					<div class="fragancias_hide" id="get_<?php echo $fr['id']; ?>">
+						<div class="x-container posRelative">
+							<div class="d_banner__flex">
+								<div class="d_banner__article__left">
+									<div class="height__left ">
+										<div class="decorative1" style="background:<?php echo $fr['color']; ?>"></div>
+										<div class="midd_left">
+											<a href="javascript:void(0)" class="back2">Volver</a>
+											<h2><i style="background:<?php echo $fr['color']; ?>"></i><?php echo $fr['title']; ?></h2>
+											<div class="content">
+												<?php echo $fr['content']; ?>
+											</div>
+											<div class="social_r">
+												<p>Síguenos:</p>
+												<ul class="social-dy">
+													<?php
+														$social = get_field('social','options');
+														foreach ($social as $s) {
+															?>
+													<li>
+														<a href="<?php echo $s['link']; ?>" target="_blank">
+															<img src="<?php echo $s['img']; ?>">
+														</a>
+													</li>
+															<?php
+														}
+													?>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>	
+								<div class="d_banner__article__right">
+									<img src="<?php echo $fr['img']; ?>" style="display: none;">
+									<div class="decorative_image">
+										<div class="decorative_image__1" style="background:<?php echo $fr['color']; ?>"></div>
+										<div class="decorative_image__2" style="background:<?php echo $fr['color']; ?>"></div>
+										<div class="decorative_image__3" style="background:<?php echo $fr['color']; ?>"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="decorative2" style="background:<?php echo $fr['color']; ?>"></div>
+					</div>
+					<?php
+				}
+			?>
+		</div>
+	</article>
+	<div class="imagen_absolute">
+		<img src="<?php the_field('gel_imagen_basic'); ?>" class="ress ress_fb ress_init">
+		<?php 
+			$fragancias = get_field('gel_fragancias');
+			foreach ($fragancias as $fr) {
+				?>
+				<img src="<?php echo $fr['img']; ?>" id="get_img_<?php echo $fr['id']; ?>" class="ress">
+				<?php
+			}
+		?>
+	</div>
+</section>
+<section id="jabon" class="fullheight d_banner d_bannerjs_jabon">
 	<article class="d_banner__article d_banner--about" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
 		<div class="x-container posRelative">
 			<div class="d_banner__article__left">
@@ -282,38 +444,6 @@ get_header();
 							</div>
 							<div class="swiper-pagination"></div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="<?php echo sanitize_title(get_field('fourth_title')); ?>" class="section fullheight" data="<?php the_field('fourth_title'); ?>">
-	<div class="full-container fullheight">
-		<div class="flex">
-			<div class="title-abs">
-				<h3><?php the_field('fourth_subtitle'); ?></h3>
-			</div>
-			<div class="title_rotate">
-				<h2><?php the_field('fourth_title'); ?></h2>
-			</div>
-			<div class="left fullheight" style="background-image: url(<?php the_field('foruth_left_image'); ?>);">				
-				<div class="decret">
-					<div class="top-part">
-						<?php the_field('foruth_left_content'); ?>
-					</div>
-					<div class="bottom-part">
-						<a href="<?php the_field('foruth_left_link'); ?>" class="btn">Ver más</a>
-					</div>
-				</div>
-			</div>
-			<div class="right fullheight " style="background-image: url(<?php the_field('foruth_right_image'); ?>);">
-				<div class="decret">
-					<div class="top-part">
-						<?php the_field('foruth_right_content'); ?>
-					</div>
-					<div class="bottom-part">
-						<a href="<?php the_field('foruth_right_link'); ?>" class="btn">Ver más</a>
 					</div>
 				</div>
 			</div>
