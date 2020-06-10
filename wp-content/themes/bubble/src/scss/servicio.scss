@@ -10,6 +10,13 @@
 			width: 50%;
 			flex: none;
 			background-size: cover;
+			@include maxw(table_min) {
+				width: 100%;
+				display: none;
+				.flex-middle {
+					display: flex;
+				}
+			}
 		}
 		.flex-middle {
 		    background: $lightgreen;
@@ -40,6 +47,9 @@
 		    -webkit-text-stroke: 2px white;
 		    color: transparent;
 		    font-size: 88px;
+		    @include maxw(table_min) {
+		    	font-size: 60px;
+		    }
 		}
 	}
 	.content_detail {
@@ -179,6 +189,11 @@
 
 .sectionFull {
 	article {
+		.fullheight {
+			@include maxw(table_min) {
+				height: auto;
+			}
+		}
 		.flex {
 			flex-wrap: wrap;
 			align-items: center;
@@ -188,6 +203,9 @@
 				width: 50%;
 				flex: none;
 				background-size: cover;
+				@include maxw(table_min) {
+					width: 100%;
+				}
 			}
 			.flex_mid {
 			    display: flex;
@@ -233,12 +251,18 @@
 		    font-size: 140px;
 		    -webkit-text-stroke: 2px white;
 		    color: transparent;
+		    @include maxw(table_min) {
+				font-size: 40px;
+			}
 		}
 		.title_sec li {
 		    font-size: 28px;
 		    margin-bottom: 15px;
 		    font-family: 'gilroysemibold';
 			color: #27233b;
+			@include maxw(table_min) {
+				font-size: 16px;
+			}
 		}
 		.cc_rr_content_img_item {
 		    background-size: contain;

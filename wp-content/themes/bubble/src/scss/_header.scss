@@ -52,6 +52,12 @@ header {
 					    top: -200px;
 					    left: -80px;
 				    }
+				    @include maxw(table_max) {
+				    	width: 180px;
+					    height: 180px;
+					    left: -33px;
+					    top: -74px;
+				    }
 				}
 			}
 		}
@@ -129,10 +135,14 @@ header {
 		    width: 100%;
 		    justify-content: space-between;
 		    bottom: 50px;
+		    .btn {
+		    	display: none;
+		    }
 		}
 	}
 	.middle-menu {
 	    margin-top: -100px;
+	    @include maxw(table_min) {margin-top: -55px; }
 	    a {
 		    display: block;
 		    font-size: 50px;
@@ -140,6 +150,9 @@ header {
 		    font-family: 'gilroybold';
 		    -webkit-text-stroke: 1px $black;
 		    color: transparent;
+		    @include maxw(table_min) {
+		    	font-size: 25px;
+		    }
 		}
 	}
 }

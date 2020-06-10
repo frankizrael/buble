@@ -66,7 +66,7 @@ get_header();
 								?>
 						<li>
 							<a href="#get_<?php echo $fr['id']; ?>" data="#get_img_<?php echo $fr['id']; ?>" style="background:<?php echo $fr['color']; ?>">
-								<?php echo $fr['title']; ?>
+								<span><?php echo $fr['title']; ?></span>
 							</a>
 						</li>
 								<?php
@@ -181,7 +181,7 @@ get_header();
 								?>
 						<li>
 							<a href="#<?php echo $fr['id']; ?>" data="#img_<?php echo $fr['id']; ?>" style="background:<?php echo $fr['color']; ?>">
-								<?php echo $fr['title']; ?>
+								<span><?php echo $fr['title']; ?></span>
 							</a>
 						</li>
 								<?php
