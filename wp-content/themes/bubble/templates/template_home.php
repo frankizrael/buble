@@ -15,7 +15,7 @@ get_header();
 						<?php the_field('foruth_left_content'); ?>
 					</div>
 					<div class="bottom-part">
-						<a href="#jabon" class="btn">Ver más</a>
+						<a href="<?php echo site_url(); ?>/jabon" class="btn">Ver más</a>
 					</div>
 				</div>
 				<?php
@@ -34,7 +34,7 @@ get_header();
 						<?php the_field('foruth_right_content'); ?>
 					</div>
 					<div class="bottom-part">
-						<a href="<?php the_field('fourth_title'); ?>" class="btn">Ver más</a>
+						<a href="<?php echo site_url(); ?>/alcoholgel" class="btn">Ver más</a>
 					</div>
 				</div>
 				<?php

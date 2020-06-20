@@ -5,25 +5,6 @@
 	<div class="x-container">
 		<div class="flex">
 			<div class="flex-item">
-				<ul id="footMenu">
-					<li>
-						<a href="#que-es-bubble">¿Qué es Bubble?</a>
-					</li>
-					<li>
-						<a href="#porque-usar-bubble">¿Porqué usar Bubble?</a>
-					</li>
-					<li>
-						<a href="#bubble-presentaciones">Bubble Presentaciones</a>
-					</li>
-					<li>
-						<a href="#testimoniales">Testimoniales</a>
-					</li>
-					<li>
-						<a href="#contacto">Pídelo hoy</a>
-					</li>
-				</ul>
-			</div>
-			<div class="flex-item">
 				<?php the_field('foot_content','options'); ?>
 			</div>
 			<div class="flex-item">

@@ -10,7 +10,8 @@ module.exports = function(env) {
             home: "./src/entries/home.js",
             index: "./src/entries/index.js",
             consulta: "./src/entries/consulta.js",
-            servicio: "./src/entries/servicio.js"
+            servicio: "./src/entries/servicio.js",
+            new_home: "./src/entries/new_home.js"
         },
         target: "web",
         mode: env.NODE_ENV,
