@@ -3,6 +3,59 @@ set_query_var('ENTRY', 'new_home');
 get_header();
 ?>
 <?php get_template_part('include/nav2'); ?>
+
+<div class="youtubeFrame">
+	<div id="player" class="iframe"></div>
+	<div class="saltarIntro">
+		Saltar Intro
+	</div>
+	<script type="text/javascript">
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+			  height: '100%',
+			  width: '100%',
+			  playerVars: {
+			    autoplay: 1,
+			    controls: 0,
+			    showinfo: 0,
+			    rel: 0,
+			    fs: 0,
+			    modestbranding: 0
+			  },
+			  videoId: 'u8417DWr4OE',
+			  events: {
+			    'onReady': onPlayerReady,
+			    'onStateChange': onPlayerStateChange
+			  }
+			});
+		}
+		function onPlayerReady(event) {
+			event.target.playVideo();
+			player.mute();
+		}
+		var done = false;
+		function onPlayerStateChange(event) {
+			if (event.data == 0) {
+				player.stopVideo();
+				jQuery('.youtubeFrame').addClass('remove');
+			}
+		}
+		function stopVideo() {
+			player.stopVideo();
+		}
+		jQuery('.saltarIntro').on('click',function(){
+			stopVideo();
+			setTimeout(function(){				
+				jQuery('.youtubeFrame').addClass('remove');
+			},500);
+		});
+	</script>
+</div>
 <section class="fullheight bubble-firstlanding">
 	<div class="left fullheight" style="background-image: url(<?php the_field('foruth_left_image'); ?>);">				<div class="x-container fullheight flex-init">
 			<?php the_field('foruth_left_content'); ?>
@@ -27,6 +80,7 @@ get_header();
 		<video autoplay muted loop id="myVideo">
 		  <source src="<?php the_field('video_jabones'); ?>" type="video/mp4">
 		</video>
+		<img src="<?php echo get_template_directory_uri(); ?>/leon.png" class="absolute_int">
 				<?php
 			}
 		?>
